@@ -1,4 +1,4 @@
-<div class="card text-center">
+<div style="clear: both;" class="card text-center">
     <div class="card-header">
         E-Comm
     </div>
