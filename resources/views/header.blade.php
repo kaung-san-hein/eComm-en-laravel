@@ -33,7 +33,7 @@ if (Session::get('user')) {
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cart({{ $total }})</a>
+                    <a class="nav-link" href="/cart-list">Cart({{ $total }})</a>
                 </li>
                 @if(Session::get('user'))
                 <li class="nav-item dropdown">
