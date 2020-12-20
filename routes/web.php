@@ -26,10 +26,12 @@ Route::get('order-now', [ProductController::class, 'orderNow']);
 Route::post('order-place', [ProductController::class, 'orderPlace']);
 Route::get('my-orders', [ProductController::class, 'myOrders']);
 
+Route::view('register', 'register');
 Route::get('login', function () {
     return view('login');
 });
 Route::post('login', [UserController::class, 'login']);
+Route::post('register', [UserController::class, 'register']);
 Route::get('logout', function () {
     Session::forget('user');
     return redirect('/login');
