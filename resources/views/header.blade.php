@@ -24,7 +24,7 @@ if (Session::get('user')) {
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Order</a>
+                    <a class="nav-link" href="/my-orders">Order</a>
                 </li>
             </ul>
             <form action="/search" class="form-inline my-2 my-lg-0 mr-auto">
