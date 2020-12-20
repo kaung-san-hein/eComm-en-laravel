@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ProductController::class, 'index']);
 Route::get('detail/{id}', [ProductController::class, 'show']);
 Route::get('search', [ProductController::class, 'search']);
+Route::post('add-to-cart', [ProductController::class, 'addToCart']);
 
 Route::get('login', function () {
     return view('login');

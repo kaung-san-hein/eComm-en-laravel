@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -89,5 +90,18 @@ class ProductController extends Controller
     {
         $data = Product::where('name', 'like', '%' . $request->input('query') . '%')->get();
         return view('search', ['products' => $data]);
+    }
+
+    public function addToCart(Request $request)
+    {
+        if ($request->session()->has('user')) {
+            $cart = new Cart();
+            $cart->product_id = $request->input('product_id');
+            $cart->user_id = $request->session()->get('user')['id'];
+            $cart->save();
+
+            return redirect()->back();
+        }
+        return redirect('/login');
     }
 }
